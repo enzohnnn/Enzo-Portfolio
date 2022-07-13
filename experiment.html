@@ -8,7 +8,10 @@
     </head>
     <body>
         <header>
-            Test things here
+            <h1>Experiement Page</h1>
+
+            <h2>Test things here</h2> 
+            <aside><span><em>Some things that didn't fit or just experimenting with I put here.</em></span>
             <!-- Navigation Bar -->
             <nav>
                 <ul>
@@ -21,7 +24,146 @@
                 </ul>
             </nav>
         </header>
-        <main>Main</main>
-        <footer>Footer</footer>
+        <main>
+            <h2>Main</h2>
+            <!-- Using Pre Tag -->
+            <pre>This       is how pre tag looks
+                when I format it strangely
+            </pre>
+            <!-- Playing around with form, not sure if this works as I wanted yet -->
+            <section>
+                <form method="post" action="mailto:e3han@ucsd.edu" >
+                    <label for="emailbox">Email Me</label>
+                    <br>
+                    First:<input type="text" name="First" size="12" maxlength="12"/>
+                    <br>
+                    Last:<input type="text" name="Last" size="24" maxlength="24" /> 
+                    <br>
+                    <textarea id="emailbox" name="emailbox" rows="4" cols="50"></textarea>
+                    <br>
+                    <input type="submit" value="Send Email" /> 
+                </form>
+            </section>
+            <!-- Using option and optgroup -->
+            <section>
+                <form action="/action_page.php">
+                    <label for="artists">Choose an artist:</label>
+                    <select name="artists" id="artists">
+                      <optgroup label="Rap">
+                        <option value="kanye">Kanye</option>
+                        <option value="kendrick">Kendrick</option>
+                      </optgroup>
+                      <optgroup label="EDM">
+                        <option value="porter">Porter Robinson</option>
+                        <option value="garrix">Martin Garrix</option>
+                      </optgroup>
+                    </select>
+                    <br><br>
+                    <input type="submit" value="Submit">
+                  </form>
+            </section>
+            <!-- Playing around with datalist vs. optgroup -->
+            <section>
+                <form action="/action_page.php" method="get">
+                    <label for="artist2">Choose your artist from the list:</label>
+                    <input list="artistList" name="artist2" id="artist2">
+                    <datalist id="artistList">
+                      <option value="Ye">
+                      <option value="K-dot">
+                      <option value="MF Doom">
+                      <option value="Tyler the Creator">
+                      <option value="Frank Ocean">
+                    </datalist>
+                    <input type="submit">
+                  </form>
+            </section>
+            <!-- Experimenting more with forms -->
+            <section>
+                <form action="/action_page.php">
+                    <fieldset>
+                    <legend>About Yourself:</legend>
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname"><br><br>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname"><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday"><br><br>
+                    <input type="submit" value="Submit">
+                    </fieldset>
+                </form>
+            </section>
+            <!-- Experimenting with template tag -->
+            <section>
+                <button onclick="showContent()">Show hidden content</button>
+                <template>
+                <h2>Enzo Han!</h2>
+                <picture>
+                    <img src="assets/images/enzo.JPEG" width="10%" height="10%" alt="Headshot of Me">
+                </picture>
+                </template>
+
+                <script>
+                function showContent() {
+                var temp = document.getElementsByTagName("template")[0];
+                var clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+                }
+                </script>
+            </section>
+            <!-- Playing around with table! -->
+            <section>
+                <table>
+                    <colgroup>
+                      <col span="2">
+                    </colgroup>
+                    <tr>
+                      <th>School</th>
+                      <th>Degree</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr>
+                      <td>UCSD</td>
+                      <td>Computer Engineering</td>
+                      <td>2022</td>
+                    </tr>
+                    <tr>
+                      <td>UCSD</td>
+                      <td>Computer Engineering</td>
+                      <td>2023</td>
+                    </tr>
+                  </table>
+            </section>
+            <!-- Wasn't sure where to put this svg/canvas element -->
+            <section>
+                <p>
+                    Here I am demonstrating that I can use <span><svg width="50" height="50">
+                        <circle cx="25" cy="25" r="20" stroke="black" stroke-width="4" fill="blue" />
+                    </svg></span> SVG element inline. And then I will draw on the canvas.
+                    <canvas id="myCanvas" width="300" height="150">
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                        
+                        <script>
+                        var c = document.getElementById("myCanvas");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();
+                        ctx.rect(20, 20, 150, 100);
+                        ctx.stroke();
+                        </script> 
+                </p>
+            </section>
+            <section>
+                <h3>Video for Fun</h3>
+                <video>
+                    <source src="assets/video/getinthere.mp4" type="video/mp4">
+                </video>
+            </section>
+        </main>
+        <footer>
+            <audio>
+                <source src="assets/audio/theDuckSong.mp3" type="audio/mp3">
+            </audio>
+        </footer>
     </body>
 </html>
