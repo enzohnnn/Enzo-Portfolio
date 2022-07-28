@@ -32,12 +32,17 @@
         </header>
         <main>
             <h2>Get in touch!</h2>
-            <button type="button"><a href="mailto:e3han@ucsd.edu">Contact Me!</a></button>
+            <button type="button" id="contact-button"><a>Contact Me!</a></button>
             <p id="contactp">Feel free to contact me through my different socials located at the footer of my website!
                 You can also reach me at my school email <a href="mailto: e3han@ucsd.edu">e3han@ucsd.edu</a> and 
                 my personal email at <a href="mailto: enzo.han@yahoo.com">enzo.han@yahoo.com</a>. I currently reside in
                 La Jolla, California while I finish schooling at UC San Diego so my timezone is PST. 
             </p>
+            <script>
+                document.getElementById('contact-button').addEventListener('click',()=>{
+                    window.location.href = "mailto:e3han@ucsd.edu";
+                });
+            </script>
         </main>
         <footer>
             <a href="assets/resume/enzoHanResume.pdf"><img src="assets/images/icons8-resume-30.png" alt="My Resume"></a>
