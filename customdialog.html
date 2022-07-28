@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Enzo Han">
+        <title>Custom Dialogs</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.js" integrity="sha512-TfORFichPEobARKaZePZQP81SQKQ10tm/ujRF1GTrl9oOATXE1EmCIfbvK4PSUtot0Xqm6Pp/MBnSH/ob9eTHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <link rel="stylesheet" href="styles.css" type="text/css" > -->
+
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        <main>
+            <button id="alert-button">Alert</button>
+            <button id="confirm-button">Confirm</button>
+            <button id="prompt-button">Prompt</button>
+
+            <p><output id="output-text" style="font-size: xx-large"></output></p>
+
+            <dialog id="alert-dialog">
+                <p>Alert Pressed!</p>
+                <form method="dialog">
+                  <button>OK</button>
+                </form>
+            </dialog>
+
+            <dialog id="confirm-dialog">
+                <p>Do you confirm?</p>
+                <form method="dialog">
+                    <button value="true">OK</button>
+                    <button value="false">Cancel</button>
+                </form>
+            </dialog>
+
+            <dialog id="prompt-dialog">
+                <p>What is your name?</p>
+                <form method="dialog">
+                    <textarea id="prompt-text" rows="1" cols="50" maxlength="40"></textarea>
+                    <div>
+                        <button value="Confirm" id="prompt-confirm-button">Confirm</button>
+                        <button value="Cancel">Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+
+            <script method="module" src="customdialog.js"></script>
+            <p><output id="output-text" style="font-size: xx-large"></output></p>
+        </main>
+        <footer>
+           
+        </footer>
+    </body>
+</html>

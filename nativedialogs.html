@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Enzo Han">
+        <title>Native Dialogs</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.js" integrity="sha512-TfORFichPEobARKaZePZQP81SQKQ10tm/ujRF1GTrl9oOATXE1EmCIfbvK4PSUtot0Xqm6Pp/MBnSH/ob9eTHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <link rel="stylesheet" href="styles.css" type="text/css" > -->
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        <main>
+            <button id="alert-button">Alert</button>
+            <button id="confirm-button">Confirm</button>
+            <button id="prompt-button">Prompt</button>
+            <button id="safe-prompt">Safer Prompt</button>
+
+            <p><output id="output-text" style="font-size: xx-large"></output></p>
+
+            <script>
+                const resetButton = document.getElementById('alert-button');
+                resetButton.addEventListener('click', alertFunction);
+
+                const confirmButton = document.getElementById('confirm-button');
+                confirmButton.addEventListener('click', confirmFunction);
+
+                const promptButton = document.getElementById('prompt-button');
+                promptButton.addEventListener('click', promptFunction);
+                // <b onmouseover="alert('pwned')">Roll me</b> for testing
+                const safePromptButton = document.getElementById('safe-prompt');
+                safePromptButton.addEventListener('click', safePromptFunc);
+
+                function alertFunction() {
+                    alert("Alert message!");
+                }
+
+                function confirmFunction() {
+                    let result = window.confirm('Do you confirm?');
+                    const outputText = document.getElementById('output-text');
+                    if(result) {
+                        outputText.innerHTML = `Confirm result: ${result}`;
+                    } else {
+                        outputText.innerHTML = `Confirm result: ${result}`;
+                    }
+                }
+
+                function promptFunction() {
+                    let result = window.prompt("What is your age?");
+                    if(result.length == 0) {
+                        result = `User didn't enter anything!`;
+                    }
+                    let output = `Result prompt: ${result}`;
+                    const outputText = document.getElementById('output-text');
+                    outputText.innerHTML = output;
+                }
+
+                function cleanData(userInput) {
+                    return DOMPurify.sanitize(userInput);
+                }
+
+                function safePromptFunc() {
+                    let dirty = window.prompt("What is your name?");
+                    let clean = cleanData(`${dirty}`);
+                    let result;
+                    if(clean.length == 0) {
+                        result = `User didn't enter anything!`;
+                    } else {
+                        result = clean;
+                    }
+                    const outputText = document.getElementById('output-text');
+                    outputText.innerHTML = result;
+                }
+
+
+            </script>
+        </main>
+        <footer>
+           
+        </footer>
+    </body>
+</html>

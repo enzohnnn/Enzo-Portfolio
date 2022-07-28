@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Enzo Han">
+        <title>CRUD</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.js" integrity="sha512-TfORFichPEobARKaZePZQP81SQKQ10tm/ujRF1GTrl9oOATXE1EmCIfbvK4PSUtot0Xqm6Pp/MBnSH/ob9eTHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <link rel="stylesheet" href="styles.css" type="text/css" > -->
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        <main>
+            <h1>List of Posts</h1>
+
+            <div>
+                <output id="posts-list"></output>
+                <button id="add-button">Add Post</button>
+            </div>
+
+            <dialog id="add-dialog">
+                <form>
+                    <label for="post-title">Post Title:</label>
+                    <input type="text" id="post-title" name="post-title" required><br><br>
+                    <label for="post-date">Date:</label>
+                    <input type="date" id="post-date" name="post-date" required><br><br>
+                    <label for="post-summary">Post Summary:</label><br>
+                    <input type="text" id="post-summary" name="post-summary"><br><br>
+                    <input type="Submit" value="Submit" id="submit-button">
+                    <button id="cancel-button" value="Cancel">Cancel</button>
+                </form>
+            </dialog>
+
+            <dialog id="edit-dialog">
+                <form>
+                    <label for="edit-title">Post Title:</label>
+                    <input type="text" id="edit-title" name="edit-title" required><br><br>
+                    <label for="edit-date">Date:</label>
+                    <input type="date" id="edit-date" name="edit-date" required><br><br>
+                    <label for="edit-summary">Post Summary:</label><br>
+                    <input type="text" id="edit-summary" name="edit-summary"><br><br>
+                    <input type="Submit" value="Submit" id="submit-edit">
+                    <button id="cancel-edit" value="Cancel">Cancel</button>
+                </form>
+            </dialog>
+
+
+            <script method="module" src="blog.js"></script>
+            <p><output id="output-text" style="font-size: xx-large"></output></p>
+        </main>
+        <footer>
+           
+        </footer>
+    </body>
+</html>
